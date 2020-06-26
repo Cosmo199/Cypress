@@ -1,7 +1,8 @@
-import locators from  '../fixtures/locations';
+import locators from  '../fixtures/locators';
 const reactTodo = 'http://todomvc.com/examples/react'
 
 describe('todo vue test',() => {
+
     beforEach(() => {
         cy.visit(reactTodo);
       });
@@ -18,6 +19,7 @@ describe('todo vue test',() => {
         cy.get(locators.reactTodo.toggleAll).click();
         cy.get(locators.reactTodo.clearCompleted).click();
         cy.get(locators.reactTodo.todoList).should('not.de.visible');
+
     });
 
 
