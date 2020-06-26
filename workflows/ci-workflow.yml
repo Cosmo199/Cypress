@@ -3,17 +3,29 @@ name: cypress demo
 on: [push]
 
 jobs:
-  build:
-    # Job name is Greeting
-    name: cypress demo
-    # This job runs on Linux
-    runs-on: ubuntu-latest
-    steps:
-      - name: Hello world
-        uses: actions/Cosmo199/cypress-demo-test.git@v1
-        with:
-          who-to-greet: 'Mona the Octocat'
-        id: hello
-      # This step prints an output (time) from the previous step's action.
-      - name: Echo the greeting's time
-        run: echo 'The time was ${{ steps.hello.outputs.time }}.'
+  cypress-run:
+   runs-on: ubuntu-latest
+   strategy:
+     fail-fast: false
+     matrix:
+      node:[10]
+      containers: [1,2]
+       name: E2E on Node v${{matrix.node}}:
+  steps:
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with:
+       node-version: ${{matrix.node}}
+   - run: node-v
+     - name: Checkount
+       uses: actions/checkout@v1
+     - name: Cypress run
+       uses: cypress-io/github-action@v1
+       with:
+       record: true
+       parallel: true
+       group: 'Todo Tests'
+       browser: chrome
+       env:
+         CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
