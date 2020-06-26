@@ -20,11 +20,13 @@ jobs:
 
     - name: Cypress run
       uses: cypress-io/github-action@v1
-  with:
-      record: false
-      parallel: true
-      group: 'Todo Tests'
-      browser: chrome env:CYPRESS_RECORD_KEY:${{secrets.CYPRESS_RECORD_KEY}} 
-      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      with:
+       record: false
+       parallel: true
+       group: 'Todo Tests'
+       browser: chrome 
+      env: 
+       CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}} 
+       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
 
