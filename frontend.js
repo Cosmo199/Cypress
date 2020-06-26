@@ -29,7 +29,7 @@ context('front-end script test workflows', () => {
     cy.contains("อัตราค่าบริการ").first().click()
 })
 
-
+/*
   
     it ('success register',()=>{
       cy.visit('http://www.ploichao.com/backend-user/register')
@@ -66,7 +66,7 @@ context('front-end script test workflows', () => {
 
     })
 
-  
+  */
   
 
   
