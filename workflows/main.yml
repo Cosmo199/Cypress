@@ -1,4 +1,4 @@
-name: cypress demo
+name: main
 # This workflow is triggered on pushes to the repository.
 on: [push]
 
