@@ -8,23 +8,23 @@ jobs:
      matrix:
       node: [10]
       containers: [1,2]
-  name: E2E on Node v${{ matrix.node }}
-  steps: 
-    - name:Setup Node
-      uses:actions/setup-node@v1
-      with:node-version:${{matrix.node}}
-    - run:node -v
+      name: E2E on Node v${{ matrix.node }}
+  steps:
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with: node-version:${{matrix.node}}
+    - run: node -v
 
-    - name:Checkount
-      uses:actions/checkout@v1
+    - name: Checkount
+      uses: actions/checkout@v1
 
-    - name:Cypress run
-      uses:cypress-io/github-action@v1
-      with:record:false
-          parallel:true
-          group:'Todo Tests'
-          browser:chrome
-       env:CYPRESS_RECORD_KEY:${{secrets.CYPRESS_RECORD_KEY}}
-         GITHUB_TOKEN:${{secrets.GITHUB_TOKEN}}
+    - name: Cypress run
+      uses: cypress-io/github-action@v1
+    with:
+      record: false
+      parallel: true
+      group: 'Todo Tests'
+      browser: chrome env:CYPRESS_RECORD_KEY:${{secrets.CYPRESS_RECORD_KEY}} 
+      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
 
