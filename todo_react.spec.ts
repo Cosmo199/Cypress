@@ -19,7 +19,6 @@ describe('todo vue test',() => {
         cy.get(locators.reactTodo.toggleAll).click();
         cy.get(locators.reactTodo.clearCompleted).click();
         cy.get(locators.reactTodo.todoList).should('not.de.visible');
-
     });
 
 
