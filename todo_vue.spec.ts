@@ -1,7 +1,7 @@
-import locators from  '../fixtures/locations';
+import locators from  '../fixtures/locators';
 
   describe('todo vue test',() => {
-      
+
     beforEach(() => {
       cy.visit(Cypress.config('baseUrl') as string); 
     });
