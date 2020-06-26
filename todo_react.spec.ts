@@ -2,7 +2,6 @@ import locators from  '../fixtures/locations';
 const reactTodo = 'http://todomvc.com/examples/react'
 
 describe('todo vue test',() => {
-
     beforEach(() => {
         cy.visit(reactTodo);
       });
