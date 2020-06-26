@@ -9,8 +9,8 @@ jobs:
      matrix:
       node: [10]
       containers: [1,2]
-  name: E2E on Node v${{ matrix.node }}
-  steps:
+    name: E2E on Node v${{ matrix.node }}
+    steps:
     - name: Setup Node
       uses: actions/setup-node@v1
       with: 
