@@ -8,11 +8,7 @@ context('front-end script test workflows', () => {
       const url = 'http://www.ploichao.com/backend-user/register'
       
     })
-
-    /*
-    case new register and workflows upload-product
-    */
-
+    
    function login () {
     cy.visit('http://www.ploichao.com/backend-user/login')
     cy.get('[name="email"]').type('aisbot01@ais.com').should('have.value', 'aisbot01@ais.com')
@@ -29,7 +25,7 @@ context('front-end script test workflows', () => {
     cy.contains("อัตราค่าบริการ").first().click()
 })
 
-
+    /*
   
     it ('success register',()=>{
       cy.visit('http://www.ploichao.com/backend-user/register')
@@ -65,11 +61,7 @@ context('front-end script test workflows', () => {
         cy.get('[name="rent_type_id"]').select('1').should('have.value', '1')
 
     })
-
-  
-  
-
-  
+  */
   
   })
   
