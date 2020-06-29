@@ -1,6 +1,4 @@
 /// <reference types="Cypress" />
-
-
 context('front-end script test workflows', () => {
     beforeEach(() => {
       
@@ -31,46 +29,27 @@ it ('view page portfolioList ui element',()=>{
     cy.visit('https://www.bcd-bte.com/portfolioList')
     cy.contains("จัดการข้อมูลผลงาน")
     cy.get('[name="search"]').type('งานเทปูน').should('have.value', 'งานเทปูน')
-
 })
 
-/*
+it ('view page blogList ui element',()=>{
+  login () 
+  cy.visit('https://www.bcd-bte.com/blogList')
+  cy.contains("จัดการข้อมูลบทความ")
+  cy.get('[name="search"]').type('งานเทพื้นบ้าน').should('have.value', 'งานเทพื้นบ้าน')
   
-    it ('success register',()=>{
-      cy.visit('http://www.ploichao.com/backend-user/register')
-      cy.get('[name="name"]').type('aisbot05').should('have.value', 'aisbot05')
-      cy.get('[name="adress"]').type('ais tower 1').should('have.value', 'ais tower 1')
-      cy.get('[name="phone"]').type('0948911206').should('have.value', '0948911206')
-      cy.get('[name="email"]').type('aisbot05@ais.com').should('have.value', 'aisbot05@ais.com')
-      cy.get('[name="password"]').type('123456').should('have.value', '123456')
-      cy.get('[name="re-password"]').type('123456').should('have.value', '123456')
-      cy.get('[name="selector"]').first().click()
-      cy.get('[id="btn_login"]').first().click()
-    })
-   
+})
 
-    it ('edit profile',()=>{
-        login () 
-        cy.contains("ข้อมูลส่วนตัว").first().click()
-        cy.get('[name="username"]').clear()
-        cy.get('[name="username"]').type('aisbot1').should('have.value', 'aisbot1')
-        cy.get('[class="btn btn-info pull-right"]').contains("บันทึก").first().click()
-    })
+it ('view add blog case 1',()=>{
+  login () 
+  cy.visit('https://www.bcd-bte.com/blogList')
+  cy.contains("จัดการข้อมูลบทความ")
+  cy.get('[class="btn btn-info"]').first().click()
+  cy.contains("เพิ่มบทความ")
+  cy.get('[name="blog_name"]').type('งานเทพื้นบ้าน').should('have.value', 'งานเทพื้นบ้าน')
+  cy.get('[name="blog_type_id"]').select('41').should('have.value', '41')
+  cy.get('[name="author_id"]').select('4').should('have.value', '4')
+  cy.get('[class="mce-content-body "]').type('งานเทพื้นบ้าน').should('have.value', 'งานเทพื้นบ้าน')
 
-    it ('edit profile',()=>{
-        login () 
-        cy.contains("อัพโหลดสิ่งของ").first().click()
-        cy.get('[name="name"]').type('กระเป๋าเดินทาง').should('have.value', 'กระเป๋าเดินทาง')
-        cy.get('[name="price"]').type('120').should('have.value', '120')
-        cy.get('[name="description"]').type('ทำจากวัสดุที่ดี ABS และ POLYCARBONATE (โพลีคาร์บอเนต) ล้อคู่ 8 ล้อ ทำจากวัสดุที่ดีหมุน 360 องศา เงียบ ใช้ระบบเข็นได้ กระเป๋าเดินทางที่มีดีไซน์ ทันสมัยโดดเด่น หรูหรา ดูดี').should('have.value', 'ทำจากวัสดุที่ดี ABS และ POLYCARBONATE (โพลีคาร์บอเนต) ล้อคู่ 8 ล้อ ทำจากวัสดุที่ดีหมุน 360 องศา เงียบ ใช้ระบบเข็นได้ กระเป๋าเดินทางที่มีดีไซน์ ทันสมัยโดดเด่น หรูหรา ดูดี')
-        cy.get('[name="agreement"]').type('ทดสอบ').should('have.value', 'ทดสอบ')
-        cy.get('[name="service_id"]').select('1').should('have.value', '1')
-        cy.get('[name="province_id"]').select('1').should('have.value', '1')
-        cy.get('[name="category_id"]').select('1').should('have.value', '1')
-        cy.get('[name="rent_type_id"]').select('1').should('have.value', '1')
-
-    })
-  */
-    
+})
   })
   
