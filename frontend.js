@@ -10,7 +10,7 @@ context('front-end script test workflows', () => {
     })
 
     /*
-    case new register and workflows upload-product
+    case new register and workflows upload-product test 
     */
 
      
